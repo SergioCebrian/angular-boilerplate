@@ -1,10 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    standalone: true,
+    imports: [
+        RouterOutlet,
+    ],
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    providers: []
 })
-export class AppComponent {
-  title = 'angular-standalone-boilerplate';
+export class AppComponent implements OnInit {
+
+    public title = 'Angular Standalone Boilerplate';
+
+    constructor() { }
+
+    ngOnInit(){
+        this.initApp();
+    }
+
+    private initApp(): void {
+    }
+
 }

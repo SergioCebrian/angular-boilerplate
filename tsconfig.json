@@ -15,6 +15,20 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@components/*": ["src/app/shared/components/*"],
+      "@directives/*": ["src/app/shared/directives/*"],
+      "@environments/*": ["src/environments/*"],
+      "@guards/*": ["src/app/core/guards/*"],
+      "@interceptors/*": ["src/app/core/interceptors/*"],
+      "@interfaces/*": ["src/app/shared/interfaces/*"],
+      "@modules/*": ["src/app/modules/*"],
+      "@mocks/*": ["src/app/core/mocks/*"],
+      "@pipes/*": ["src/app/shared/pipes/*"],
+      "@services/*": ["src/app/core/services/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@static/*": ["src/app/shared/static-data/*"],
+    }
   }
 }
