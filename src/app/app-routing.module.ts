@@ -9,14 +9,17 @@ export const APP_ROUTES: Routes = [
     },
     {
         path: 'home',
+        title: 'Home',
         loadComponent: () => import('./modules/home/home.component').then(m => m.HomeComponent)
     },
     {
         path: 'login',
+        title: 'Login',
         loadComponent: () => import('./modules/auth/login/login.component').then(m => m.LoginComponent)
     },
     {
         path: '**',
+        title: 'Not Found',
         loadComponent: () => import('./modules/not-found/not-found.component').then(m => m.NotFoundComponent)
     }
 ];

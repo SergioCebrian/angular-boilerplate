@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { PreloaderService } from './preloader.service';
+import { RestService } from './rest.service';
 
-describe('PreloaderService', () => {
-  let service: PreloaderService;
+describe('RestService', () => {
+  let service: RestService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PreloaderService);
+    service = TestBed.inject(RestService);
   });
 
   it('should be created', () => {

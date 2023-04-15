@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 
-import { Auth, authActionTypes } from '@interfaces/auth';
+import { Auth } from '@interfaces/auth';
 import { RestService } from '@services/rest/rest.service';
 import { StorageService } from '@services/storage/storage.service';
 
@@ -16,12 +17,8 @@ export class AuthService {
     private storageService: StorageService
   ) { }
 
-  async doAuth(data: Auth, action: authActionTypes): Promise<void> {
-    const resp: Auth = await this.restService.save(action, data);
-    if (resp && resp.token) {
-      await this.storageService.setItem('token', resp.token);
-      this.router.navigate(['/']);
-    }
+  doAuth(data: Auth): Observable<Auth> {
+    return this.restService.save('login', data);
   }
 
   async doLogout(): Promise<void> {

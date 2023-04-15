@@ -9,7 +9,6 @@ import { MultiTranslateHttpLoader } from 'ngx-translate-multi-http-loader';
 
 import { environment } from '@environments/environment';
 import { TokenInterceptor } from '@interceptors/token/token.interceptor';
-import { MaterialModule } from '@shared/material.module';
 
 import { AppComponent } from './app/app.component';
 import { APP_ROUTES } from './app/app-routing.module';
@@ -40,7 +39,6 @@ bootstrapApplication(
       ),
       importProvidersFrom([BrowserAnimationsModule]),
       provideAnimations(),
-      MaterialModule,
       importProvidersFrom(TranslateModule.forRoot({
         defaultLanguage: 'en',
         loader: {

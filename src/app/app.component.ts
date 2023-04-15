@@ -13,7 +13,7 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent implements OnInit {
 
-    public title = 'Angular Standalone Boilerplate';
+    public title = 'Angular Boilerplate';
 
     constructor() { }
 

@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
-import { PreloaderService } from './preloader.service';
+import { UtilsService } from './utils.service';
 
-describe('PreloaderService', () => {
-  let service: PreloaderService;
+describe('UtilsService', () => {
+  let service: UtilsService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(PreloaderService);
+    service = TestBed.inject(UtilsService);
   });
 
   it('should be created', () => {

@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
+import { environment } from '@environments/environment';
 
 import { RestService } from '@services/rest/rest.service';
 
@@ -7,16 +8,17 @@ import { RestService } from '@services/rest/rest.service';
 })
 export class ApiService {
 
-  constructor(
-    private readonly restService: RestService
-  ) { }
+  private readonly api = environment.api;
+  private readonly restService = Inject(RestService);
+
+  constructor() { }
 
   /*=============================================*\
-   * CONTACT
+   * Example
   /*=============================================*/
 
-  async example(data: { [key: string]: any }): Promise<void> {
-    return await this.restService.getAll('example', data);
+  async example(url: string, data: { [key: string]: any }): Promise<void> {
+    return await this.restService.getAll(`${ this.api }${ url }`, data);
   }
 
 }
